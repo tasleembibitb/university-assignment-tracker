@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="University Assignment Tracker — track every assignment by subject, teacher and due date, with soft-copy and hard-copy checklists, so nothing is late.">
+  <title>University Assignment Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo" aria-hidden="true">TB</div>
+      <div>
+        <h1>University Assignment Tracker</h1>
+        <p class="tagline">Every assignment in one place — soft copy, hard copy, due date</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro card">
+      <h2>How it works</h2>
+      <p>University assignments pile up — one to send on WhatsApp, one to
+        print, one whose topic still needs confirming. This tracker keeps each
+        assignment with its subject, topic, teacher and due date, plus two
+        checklists: <strong>soft copy</strong> (sent to the teacher) and
+        <strong>hard copy</strong> (printed and submitted in class). Your list
+        is saved in your browser, so it is still there tomorrow.</p>
+      <p class="demo-note">Demo example pre-filled below with <strong>real
+        assignments</strong> from a final-year BSCS student. Add your own,
+        change any detail, or delete the samples.</p>
+    </section>
+
+    <section class="card">
+      <h2>Add an assignment</h2>
+      <form id="add-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="new-subject">Subject</label>
+            <input type="text" id="new-subject" placeholder="e.g. Computer Assembly Language" required maxlength="60">
+          </div>
+          <div class="field">
+            <label for="new-topic">Topic</label>
+            <input type="text" id="new-topic" placeholder="e.g. Computer Processors" required maxlength="100">
+          </div>
+          <div class="field">
+            <label for="new-teacher">Teacher (optional)</label>
+            <input type="text" id="new-teacher" placeholder="Submitted to" maxlength="60">
+          </div>
+          <div class="field">
+            <label for="new-date">Due date (optional)</label>
+            <input type="date" id="new-date">
+          </div>
+          <div class="field">
+            <label for="new-status">Status</label>
+            <select id="new-status">
+              <option value="not-started">Not started</option>
+              <option value="in-progress">In progress</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Add assignment</button>
+          <button type="button" class="btn btn-secondary" id="reset-demo">Reset to demo example</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="results" aria-live="polite">
+      <h2>Your assignments</h2>
+      <div class="filters" id="filters">
+        <button type="button" class="chip active" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="not-started">Not started</button>
+        <button type="button" class="chip" data-filter="in-progress">In progress</button>
+        <button type="button" class="chip" data-filter="done">Done</button>
+      </div>
+      <p id="summary" class="summary"></p>
+      <div class="results-list" id="assignment-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Soft copy vs hard copy</h2>
+      <ul class="checklist">
+        <li><strong>Soft copy</strong> — send the file to the teacher personally, not in the class group, so nobody copies it.</li>
+        <li><strong>Hard copy</strong> — print it and submit it in class.</li>
+        <li>Tick both boxes on the assignment card when each one is done.</li>
+      </ul>
+    </section>
+
+    <section class="card disclaimer">
+      <h2>Important note</h2>
+      <p>This is a <strong>demo tracker</strong>. The sample assignments are
+        real subjects and topics only — never put a password, phone number,
+        CNIC number or roll number into a tracker or a public post. Always
+        check with your teacher for the final due date.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>University Assignment Tracker &middot; Built by Tasleem Bibi &middot; Sukkur, Sindh, Pakistan</p>
+      <p class="footer-note">Sample assignments only. Track your own the same way.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
